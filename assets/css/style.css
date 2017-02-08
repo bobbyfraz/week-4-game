@@ -1,0 +1,79 @@
+body{
+	background-image: url(../images/small_steps.png);
+	font-family: arial;
+}
+
+header{
+	font-weight: bold; 
+	font-size: 38px;
+	color: #ffffff;
+	padding: 20px 10px 20px 10px;
+	margin-top: 20px;
+	background: #ff9900;
+	text-align: center;
+}
+
+#instructions{
+	font-size: 18px;
+	color: #ffffff;
+	padding: 10px;
+	margin-top: 10px;
+	background: #33cc33;
+	width: 60%;
+}
+
+#randomsection{
+	font-size: 36px;
+	font-weight: bold;
+	background: #ff3300;
+	padding: 10px 30px 20px 10px;
+	margin-top: 10px;
+	margin-right: 10px;
+	height: 100px;
+}
+
+#wins-losses{
+	font-size: 18px;
+	background: #0099ff;
+	padding: 10px 5px 5px 10px;
+	margin-top: 10px;
+	height: 100px;
+}
+
+#crystal-row{
+	margin-top: 10px;
+	padding: 10px 10px 10px 20px;
+}
+#crystal1{
+	width: 100px;
+	height: 100px;
+}
+#crystal2{
+	width: 100px;
+	height: 100px;
+}
+#crystal3{
+	width: 100px;
+	height: 100px;
+}
+#crystal4{
+	width: 100px;
+	height: 100px;
+}
+
+#yourtotal{
+	font-size: 18px;
+	background: #0099ff;
+	padding: 10px 5px 5px 10px;
+	margin-top: 10px;
+}
+
+#scoresection{
+	font-size: 48px;
+	font-weight: bold;
+	background: #0099ff;
+	padding: 10px 30px 20px 10px;
+	margin-top: 10px;
+	margin-bottom: 40px;
+	height: 100px;
+}

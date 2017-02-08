@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="utf-8">
+	<title>Crystal Collector Game!</title>
+	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script type="text/javascript" src="assets/javascript/game.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+</head>
+
+<body class="container">
+
+	<div class="row">
+		<header class="col-xs-6 col-sm-6 col-md-6 col-lg-6">Crystals Collector!</header>
+	</div>
+
+	<div class="row">
+		<div  class="col-xs-7 col-sm-7 col-md-7 col-lg-7" id="instructions">
+		You will be given a random number to start off the game.
+		<br>
+		There are four crystals below.  By clicking on a crystal you will add a specific amount of points to your total score.
+		<br>
+		You win the game by matching your total score to the random number.  You loose the game if your total score goes above the random number.
+		<br>
+		The value of each crystal is hidden from you until you click on it.
+		<br>
+		Each time you start the game the value of the crystals will change.
+		</div>
+	</div>
+
+	<section class="row">
+		<div class="col-xs-3 col-sm-3 col-md-3 col-lg-3" id="randomsection">
+			<span id="randomnumber"></span>
+		</div>
+		<div  class="col-xs-2 col-sm-2 col-md-2 col-lg-2" id="wins-losses">
+			<div id="wins">
+				Wins: <span id="wincount"></span>
+			</div>
+			<div id="losses">
+				Losses: <span id="losscount"></span>
+			</div>
+		</div>
+	</section>
+
+	<div class="row">
+		<section class="col-xs-12 col-sm-12 col-md-12 col-lg-12" id="crystal-row">
+			<img id="crystal1" src="assets/images/1.jpg">
+			<img id="crystal2" src="assets/images/2.jpg">
+			<img id="crystal3" src="assets/images/3.jpg">
+			<img id="crystal4" src="assets/images/4.jpg">
+		</section>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5" id="yourtotal">Your total score is: </div>
+	</div>
+
+	<div class="row">
+		<div class="col-xs-5 col-sm-5 col-md-5 col-lg-5" id="scoresection">
+			<span id="totalscore"></span>
+		</div>
+	</div>
+
+</body>
+
+
+<script type="text/javascript">
+	
+	var wins = 0;
+	var losses = 0;
+	var targetnumber = Math.floor((Math.random()*120)+19);
+	var score = 0;
+	var crystal1value = ($(this).attr(Math.floor((Math.random()*12)+1));
+	var crystal2value = Math.floor((Math.random()*12)+1);
+	var crystal3value = Math.floor((Math.random()*12)+1);
+	var crystal4value = Math.floor((Math.random()*12)+1);
+	//var crystals = ["#crystal1", "#crystal2", "#crystal3", "#crystal4"]
+
+	$("#wincount").text(wins);
+	$("#losscount").text(losses);
+	$("#randomnumber").text(targetnumber);
+	$("#totalscore").text(score);
+
+	function reset(){
+		targetnumber = Math.floor((Math.random()*120)+19)
+		crystal1value = Math.floor((Math.random()*12)+1);
+		crystal2value = Math.floor((Math.random()*12)+1);
+		crystal3value = Math.floor((Math.random()*12)+1);
+		crystal4value = Math.floor((Math.random()*12)+1);
+		score = 0
+	}
+	console.log("crystal1value: " + crystal1value)
+	console.log("crystal2value: " + crystal1value)
+	console.log("crystal3value: " + crystal1value)
+	console.log("crystal4value: " + crystal1value)
+
+	$("#crystal1").on("click", "img", function(){
+		//crystal1value = parseInt(crystal1value);
+		crystal1value + score;
+	});
+	$("#crystal2").on("click", "img", function(){
+		//crystal2value = parseInt(crystal2value);
+		crystal2value + score;
+	});
+	$("#crystal3").on("click", "img", function(){
+		//crystal3value = parseInt(crystal3value);
+		crystal3value + score;
+	});
+	$("#crystal4").on("click", "img", function(){
+		//crystal4value = parseInt(crystal4value);
+		crystal4value + score;
+	});
+		//link random number function to random number tag 3:13/3:19
+		//for random number every single click put the random number generator inside the function
+		//4 different pictures with 4 different values 3:27
+		//create for loop with 4 different pictures taging each picture with a number 3:29
+		//parseInt()
+</script>
+</html>
