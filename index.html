@@ -36,10 +36,10 @@
 			<span id="randomnumber"></span>
 		</div>
 		<div  class="col-xs-2 col-sm-2 col-md-2 col-lg-2" id="wins-losses">
-			<div id="wins">
+			<div id="win">
 				Wins: <span id="wincount"></span>
 			</div>
-			<div id="losses">
+			<div id="loss">
 				Losses: <span id="losscount"></span>
 			</div>
 		</div>
@@ -68,16 +68,22 @@
 
 
 <script type="text/javascript">
-	
+
+function game(){
 	var wins = 0;
 	var losses = 0;
 	var targetnumber = Math.floor((Math.random()*120)+19);
 	var score = 0;
-	var crystal1value = ($(this).attr(Math.floor((Math.random()*12)+1));
-	var crystal2value = Math.floor((Math.random()*12)+1);
-	var crystal3value = Math.floor((Math.random()*12)+1);
-	var crystal4value = Math.floor((Math.random()*12)+1);
-	//var crystals = ["#crystal1", "#crystal2", "#crystal3", "#crystal4"]
+	var crystal1value = Math.floor((Math.random()*12)+1);
+	var crystal2value = Math.floor((Math.random()*11)+1);
+	var crystal3value = Math.floor((Math.random()*10)+1);
+	var crystal4value = Math.floor((Math.random()*12)+2);
+
+	console.log("crystal1value: " + crystal1value)
+	console.log("crystal2value: " + crystal2value)
+	console.log("crystal3value: " + crystal3value)
+	console.log("crystal4value: " + crystal4value)
+	console.log("Score: " + score)
 
 	$("#wincount").text(wins);
 	$("#losscount").text(losses);
@@ -85,38 +91,61 @@
 	$("#totalscore").text(score);
 
 	function reset(){
-		targetnumber = Math.floor((Math.random()*120)+19)
+		targetnumber = Math.floor((Math.random()*120)+19);
 		crystal1value = Math.floor((Math.random()*12)+1);
 		crystal2value = Math.floor((Math.random()*12)+1);
 		crystal3value = Math.floor((Math.random()*12)+1);
 		crystal4value = Math.floor((Math.random()*12)+1);
-		score = 0
+		score = 0;
+		$("#wincount").text(wins);
+		$("#losscount").text(losses);
+		$("#randomnumber").text(targetnumber);
+		$("#totalscore").text(score);
+		console.log("crystal1value: " + crystal1value)
+		console.log("crystal2value: " + crystal2value)
+		console.log("crystal3value: " + crystal3value)
+		console.log("crystal4value: " + crystal4value)
 	}
-	console.log("crystal1value: " + crystal1value)
-	console.log("crystal2value: " + crystal1value)
-	console.log("crystal3value: " + crystal1value)
-	console.log("crystal4value: " + crystal1value)
 
-	$("#crystal1").on("click", "img", function(){
-		//crystal1value = parseInt(crystal1value);
-		crystal1value + score;
+	function check(){
+		if (score === targetnumber){
+			wins++;
+			alert("YOU WIN!!! PLAY AGAIN")
+			reset();
+		}
+		if (score > targetnumber){
+			losses++;
+			alert("YOU LOSE!!! PLAY AGAIN");
+			reset();
+		}
+	}
+
+	$("#crystal1").on("click", function(event){
+		score = crystal1value + score;
+		$("#totalscore").text(score);
+		check();
+		console.log("Score: " + score)
 	});
-	$("#crystal2").on("click", "img", function(){
-		//crystal2value = parseInt(crystal2value);
-		crystal2value + score;
+	$("#crystal2").on("click", function(event){
+		score = crystal2value + score;
+		$("#totalscore").text(score);
+		check();
+		console.log("Score: " + score)
 	});
-	$("#crystal3").on("click", "img", function(){
-		//crystal3value = parseInt(crystal3value);
-		crystal3value + score;
+	$("#crystal3").on("click", function(event){
+		score = crystal3value + score;
+		$("#totalscore").text(score);
+		check();
+		console.log("Score: " + score)
 	});
-	$("#crystal4").on("click", "img", function(){
-		//crystal4value = parseInt(crystal4value);
-		crystal4value + score;
+	$("#crystal4").on("click", function(event){
+		score = crystal4value + score;
+		$("#totalscore").text(score);
+		check();
+		console.log("Score: " + score)
 	});
-		//link random number function to random number tag 3:13/3:19
-		//for random number every single click put the random number generator inside the function
-		//4 different pictures with 4 different values 3:27
-		//create for loop with 4 different pictures taging each picture with a number 3:29
-		//parseInt()
+}
+
+game();
 </script>
 </html>
