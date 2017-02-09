@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	<script type="text/javascript" src="assets/javascript/game.js"></script>
-	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
 </head>
 
 <body class="container">
@@ -68,16 +68,15 @@
 
 
 <script type="text/javascript">
-
 function game(){
 	var wins = 0;
 	var losses = 0;
 	var targetnumber = Math.floor((Math.random()*120)+19);
 	var score = 0;
 	var crystal1value = Math.floor((Math.random()*12)+1);
-	var crystal2value = Math.floor((Math.random()*11)+1);
-	var crystal3value = Math.floor((Math.random()*10)+1);
-	var crystal4value = Math.floor((Math.random()*12)+2);
+	var crystal2value = Math.floor((Math.random()*12)+1);
+	var crystal3value = Math.floor((Math.random()*12)+1);
+	var crystal4value = Math.floor((Math.random()*12)+1);
 
 	console.log("crystal1value: " + crystal1value)
 	console.log("crystal2value: " + crystal2value)
@@ -148,4 +147,5 @@ function game(){
 
 game();
 </script>
+
 </html>
